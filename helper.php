@@ -31,12 +31,15 @@ class ModSessionBasedContentHelper
 	 */
 	public function showData()
 	{
-		$isFallback       = $this->params->get('isFallback', false);
+		$isFallback      = $this->params->get('isFallback', false);
+		$mode            = $this->params->get('mode', 'inclusive');
 		$sessionVariable = $this->params->get('sessionVariable');
 		$sessionValues   = $this->getSessionValues();
 		$session         = JFactory::getSession();
 
-		if ($session->has($sessionVariable) && in_array($session->get($sessionVariable), $sessionValues))
+		$match = ($mode == 'inclusive') ? in_array($session->get($sessionVariable), $sessionValues) : !in_array($session->get($sessionVariable), $sessionValues);
+
+		if ($session->has($sessionVariable) && $match)
 		{
 			return true;
 		}
@@ -51,7 +54,7 @@ class ModSessionBasedContentHelper
 
 	private function getSessionValues()
 	{
-		$sessionValues = $this->params->get('sessionValues');
+		$sessionValues = $this->params->get('sessionValues', '');
 
 		if (strpos($sessionValues, ','))
 		{

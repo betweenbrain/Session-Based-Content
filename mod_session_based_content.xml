@@ -36,6 +36,15 @@
 					<option value="1">JYes</option>
 				</field>
 
+				<field name="mode"
+				       type="list"
+				       default="inclusive"
+				       label="MOD_SESSION_BASED_CONTENT_MODE_LABEL"
+				       description="MOD_SESSION_BASED_CONTENT_MODE_DESC">
+					<option value="inclusive">MOD_SESSION_BASED_CONTENT_INCLUSIVE</option>
+					<option value="exclusive">MOD_SESSION_BASED_CONTENT_EXCLUSIVE</option>
+				</field>
+
 				<field name="sessionVariable"
 				       type="text"
 				       default=""
