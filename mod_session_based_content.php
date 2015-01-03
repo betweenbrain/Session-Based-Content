@@ -27,4 +27,4 @@ if ($module->content && $params->def('prepare_content', 1))
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
-require JModuleHelper::getLayoutPath('mod_session_based_contet', 'default');
+require JModuleHelper::getLayoutPath('mod_session_based_content', 'default');
