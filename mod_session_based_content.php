@@ -12,8 +12,18 @@
 // Include the syndicate functions only once
 require_once __DIR__ . '/helper.php';
 
-$helper  = new modSessionBasedContentHelper;
-$options = $helper->getData();
+$helper = new modSessionBasedContentHelper($params);
+
+if (!$helper->showData())
+{
+	$module->content = null;
+}
+
+if ($module->content && $params->def('prepare_content', 1))
+{
+	JPluginHelper::importPlugin('content');
+	$module->content = JHtml::_('content.prepare', $module->content, '', 'mod_session_based_content.content');
+}
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 

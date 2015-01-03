@@ -27,7 +27,7 @@
 		<fields name="params">
 			<fieldset name="basic">
 
-				<field name="default"
+				<field name="isDefault"
 				       type="list"
 				       default=""
 				       label="MOD_SESSION_BASED_CONTENT_DEFAULT_LABEL"
@@ -42,7 +42,7 @@
 				       label="MOD_SESSION_BASED_CONTENT_SESSION_VARIABLE_LABEL"
 				       description="MOD_SESSION_BASED_CONTENT_SESSION_VARIABLE_DESC" />
 
-				<field name="values"
+				<field name="sessionValues"
 				       type="textarea"
 				       default=""
 				       label="MOD_SESSION_BASED_CONTENT_SHOW_SUBMENU_ITEMS_LABEL"
