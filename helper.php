@@ -31,7 +31,7 @@ class ModSessionBasedContentHelper
 	 */
 	public function showData()
 	{
-		$isDefault       = $this->params->get('isDefault', false);
+		$isFallback       = $this->params->get('isFallback', false);
 		$sessionVariable = $this->params->get('sessionVariable');
 		$sessionValues   = $this->getSessionValues();
 		$session         = JFactory::getSession();
@@ -41,7 +41,7 @@ class ModSessionBasedContentHelper
 			return true;
 		}
 
-		if (!$session->has($sessionVariable) && $isDefault)
+		if (!$session->has($sessionVariable) && $isFallback)
 		{
 			return true;
 		}
