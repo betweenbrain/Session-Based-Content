@@ -53,14 +53,17 @@ class ModSessionBasedContentHelper
 	{
 		$sessionValues = $this->params->get('sessionValues');
 
-		$return = str_split(',', $sessionValues);
-
-		if (!is_array($return))
+		if (strpos($sessionValues, ','))
 		{
-			$return = str_split($return, strlen($return));
+			$sessionValues = str_split(',', $sessionValues);
 		}
 
-		return $return;
+		if (!is_array($sessionValues))
+		{
+			$sessionValues = str_split($sessionValues, strlen($sessionValues));
+		}
+
+		return $sessionValues;
 
 	}
 }
