@@ -27,11 +27,11 @@
 		<fields name="params">
 			<fieldset name="basic">
 
-				<field name="isDefault"
+				<field name="isFallback"
 				       type="list"
 				       default=""
-				       label="MOD_SESSION_BASED_CONTENT_DEFAULT_LABEL"
-				       description="MOD_SESSION_BASED_CONTENT_DEFAULT_DESC">
+				       label="MOD_SESSION_BASED_CONTENT_FALLBACK_LABEL"
+				       description="MOD_SESSION_BASED_CONTENT_FALLBACK_DESC">
 					<option value="">JNo</option>
 					<option value="1">JYes</option>
 				</field>
@@ -45,8 +45,8 @@
 				<field name="sessionValues"
 				       type="textarea"
 				       default=""
-				       label="MOD_SESSION_BASED_CONTENT_SHOW_SUBMENU_ITEMS_LABEL"
-				       description="MOD_SESSION_BASED_CONTENT_SHOW_SUBMENU_ITEMS_DESC" />
+				       label="MOD_SESSION_BASED_CONTENT_SESSION_VARIABLE_VALUES_LABEL"
+				       description="MOD_SESSION_BASED_CONTENT_SESSION_VARIABLE_VALUES_DESC" />
 
 				<field name="moduleclass_sfx"
 				       type="text"
