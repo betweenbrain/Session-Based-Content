@@ -25,7 +25,7 @@
 
 	<config>
 		<fields name="params">
-			<fieldset name="basic">
+			<fieldset name="MOD_SESSION_BASED_CONTENT_SESSION_TAB">
 
 				<field name="isFallback"
 				       type="list"
