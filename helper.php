@@ -15,7 +15,7 @@ class ModSessionBasedContentHelper
 	 *
 	 * @param JRegistry $params : module parameters
 	 *
-	 * @since 0.1
+	 * @since 1.0.0
 	 *
 	 */
 	public function __construct($params)
@@ -25,9 +25,11 @@ class ModSessionBasedContentHelper
 	}
 
 	/**
-	 * Gets the data
+	 * Checks the user's session for matches as configured
 	 *
-	 * @return int
+	 * @return boolean
+	 *
+	 * @since 1.0.0
 	 */
 	public function showData()
 	{
@@ -52,6 +54,13 @@ class ModSessionBasedContentHelper
 		return false;
 	}
 
+	/**
+	 * Gets and formats the configured session values
+	 *
+	 * @return array
+	 *
+	 * @since 1.0.0
+	 */
 	private function getSessionValues()
 	{
 		$sessionValues = $this->params->get('sessionValues', '');
