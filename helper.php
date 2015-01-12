@@ -39,7 +39,7 @@ class ModSessionBasedContentHelper
 		$sessionValues   = $this->getSessionValues();
 		$session         = JFactory::getSession();
 
-		$match = ($mode == 'inclusive') ? in_array($session->get($sessionVariable), $sessionValues) : !in_array($session->get($sessionVariable), $sessionValues);
+		$match = ($mode == 'inclusive') ? in_array(strtolower($session->get($sessionVariable)), array_map('strtolower', $sessionValues)) : !in_array(strtolower($session->get($sessionVariable)), array_map('strtolower', $sessionValues));
 
 		if ($session->has($sessionVariable) && $match)
 		{
